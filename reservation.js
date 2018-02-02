@@ -26,7 +26,19 @@ var reservations = [
 
 ];
 
-var waitlist = []
+var waitlist = [
+  {
+    routeName: "ivan",
+    name: "Ivan",
+    phoneNumber: "512-555-4444",
+    email: "ivan@test.com",
+    uniqueId: "noFoodforYou"
+  }
+
+
+
+
+];
 
 
 // Routes
@@ -48,21 +60,32 @@ app.get("/reserve", function(req, res) {
 });
 
 // Create New Reservations - takes in JSON input
+//Checks to see if the reservations are full, and places them into the waitlist
 app.post("/reserve/new", function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body-parser middleware
-  var newreservation = req.body;
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body-parser middleware
+    var newreservation = req.body;
+    // Using a RegEx Pattern to remove spaces from newCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    if (reservations.length > 5) {
 
-  console.log(newreservation);
+    //newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
 
-  characters.push(newreservation);
+    console.log(newreservation);
 
-  res.json(newreservation);
-});
+    reservations.push(newreservation);
 
+    res.json(newreservation);
+    }
+
+    else {
+      console.log(newreservation);
+
+      waitlist.push(newreservation);
+
+      res.json(newreservation);
+    }
+  });
 
 // Starts the server to begin listening
 // =============================================================

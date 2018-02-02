@@ -76,6 +76,7 @@ app.post("/reserve/new", function(req, res) {
     reservations.push(newreservation);
 
     res.json(newreservation);
+    console.log("Reservation added")
     }
 
     else {

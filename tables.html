@@ -13,10 +13,10 @@
   <div class="container">
     <div id="hotTitle" class="jumbotron">
       <h1 class="text-center">
-				<hr>
         <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Hot Restaurant</h1>
+				<hr>
       <h2>Current Reservations and Waiting List</h2>
-      <p><a class="btn btn-lg btn-danger" href="#" role="button">Make Reservation</a>
+      <p><a class="btn btn-lg btn-danger" href="/reserve" role="button">Make Reservation</a>
       <button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></p>
     </div>
     <div class="row">
@@ -47,6 +47,13 @@
           </div>
         </div>
       </div>
+  </div>
+
+	<div class="container">
+  	<p>Control Panel</p>
+    <p><a href="#" id="clear">Clear Table</a> |
+			<a href="/api/tables">API Table Link</a> |
+			<a href="/api/waitlist">API Wait List</a></p>
   </div>
 
 <script

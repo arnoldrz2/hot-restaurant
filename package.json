@@ -4,7 +4,9 @@
   "description": "",
   "main": "reservation.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node reservation.js",
+    "watch": "nodemon reservation.js"
   },
   "repository": {
     "type": "git",
